@@ -1,10 +1,72 @@
 body {
   padding: 0; margin: 0; overflow: hidden;
+  background: #C1D7D8;
+  color: rgba(50,70,120,.9);
+}
+
+a {
+  text-decoration: none;
+  color: rgba(50,70,120,.9);
+}
+
+a:hover {
+  color: rgba(50,70,120,.7);
 }
 
 canvas{
   padding:0;
 }
+
+#credits {
+  /* display: none; */
+  width: 80%;
+  height: auto;
+  margin: 100px auto;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+#credits .illustration {
+
+}
+
+#credits h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-size: 80px;
+  line-height: 1;
+  color: rgba(50,70,120,.9);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#credits h1 span {
+  font-size: 32px;
+  vertical-align: middle;
+  display: inline;
+  background: rgba(50,70,120,.9);
+  color: white;
+  border-radius: 100%;
+  padding: 8px 7px;
+}
+
+
+#credits p {
+  line-height: 1;
+  margin: 1em;
+}
+
+#credits p.authors {
+  font-size: 21px;
+}
+
+#credits p.authors a {
+  font-size: 32px;
+}
+
+
+
+
 
 #credits {
   display: none;
