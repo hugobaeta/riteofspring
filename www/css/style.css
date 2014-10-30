@@ -1,0 +1,11 @@
+body {
+  padding: 0; margin: 0; overflow: hidden;
+}
+
+canvas{
+  padding:0;
+}
+
+#credits {
+  display: none;
+}
