@@ -21,17 +21,17 @@ canvas{
 
 
 #opening{
-  width: 45%;
+  width: 25%;
   height: auto;
   margin: 100px auto;
-  margin-left: 200px;
+  margin-left: 20px;
 
 
 }
 
 
 #credits {
-  /* display: none; */
+   display: none; 
   width: 80%;
   height: auto;
   margin: 100px auto;
