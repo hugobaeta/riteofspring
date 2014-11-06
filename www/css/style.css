@@ -1,7 +1,8 @@
 body {
   padding: 0; margin: 0; overflow: hidden;
-  background: #C1D7D8;
-  /*color: rgba(50,70,120,.9);*/
+  background: rgb(180, 235, 240);
+  color: rgba(50,70,120,.5);
+  font-family: 'Arimo', sans-serif;
 }
 
 a {
@@ -13,76 +14,55 @@ a:hover {
   color: rgba(50,70,120,.7);
 }
 
-
-
 canvas{
-  padding:0;
-  width: 100%;
-  height: 100%;
-}
-
-
-#opening{
-  width: 25%;
-  height: auto;
-  margin: 100px auto;
-  margin-left: 20px;
-
-
-}
-
-
-#credits {
-   display: none; 
-  width: 80%;
-  height: auto;
-  margin: 100px auto;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
-}
-
-#credits .illustration {
-
-}
-
-#credits h1 {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 300;
-  font-size: 80px;
-  line-height: 1;
-  color: rgba(50,70,120,.9);
-  text-transform: uppercase;
+  padding: 0;
   margin: 0;
 }
 
-#credits h1 span {
-  font-size: 32px;
-  vertical-align: middle;
-  display: inline;
-  background: rgba(50,70,120,.9);
-  color: white;
-  border-radius: 100%;
-  padding: 8px 7px;
+
+
+/*
+//  Opening Scene
+*/
+
+#scene {
+  display: none;
 }
 
+
+
+/*
+//  Credits
+*/
+
+#credits {
+
+
+  width: 100%;
+  height: auto;
+  margin: 20% auto 50%;
+  text-align: center;
+}
+
+#credits .illustration {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+#credits h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 1;
+  color: rgba(50,70,120,.9);
+  margin: 0 0 .3em;
+}
+
+#credits h1 span {
+  color: rgba(50,70,120,.5);
+}
 
 #credits p {
   line-height: 1;
-  margin: 1em;
-}
-
-#credits p.authors {
-  font-size: 21px;
-}
-
-#credits p.authors a {
-  font-size: 32px;
-}
-
-
-
-
-
-#credits {
-  display: none;
+  margin: .5em 0;
 }
