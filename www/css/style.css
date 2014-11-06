@@ -17,6 +17,17 @@ canvas{
   padding:0;
 }
 
+
+#opening{
+  width: 45%;
+  height: auto;
+  margin: 100px auto;
+  margin-left: 200px;
+
+
+}
+
+
 #credits {
   /* display: none; */
   width: 80%;
