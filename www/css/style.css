@@ -30,6 +30,8 @@ figure {
 */
 
 #scene {
+  display: none;
+
   width: 100%;
 }
 
