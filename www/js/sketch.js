@@ -15,6 +15,9 @@ var myColor;
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 
+//set frame rate = 24
+	frameRate(24);
+
 	myColor = {
 		highlight: color(255,255,255,40),
 		snow: color(255,255,255,100),
@@ -37,9 +40,12 @@ function setup() {
 		size: createVector( width*0.12, width*0.15 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+
+	//animate position.x by each frame
+			translate( this.position.x+=0.1, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsBack );
+
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
 			fill( myColor.highlight );
 			triangle(this.size.x/2, 0, this.size.x, this.size.y, this.size.x/2, this.size.y);
@@ -52,7 +58,7 @@ function setup() {
 		size: createVector( width*0.09, width*0.19 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.1, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsBack );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -67,7 +73,7 @@ function setup() {
 		size: createVector( width*0.07, width*0.12 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.1, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsBack );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -97,7 +103,7 @@ function setup() {
 		size: createVector( width*0.12, width*0.13 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.2, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsMiddle );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -112,7 +118,7 @@ function setup() {
 		size: createVector( width*0.23, width*0.15 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.2, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsMiddle );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -129,7 +135,7 @@ function setup() {
 		size: createVector( width*0.05, width*0.04 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.2, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsMiddle );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -157,7 +163,7 @@ function setup() {
 		size: createVector( width*0.14, width*0.18 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.3, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsFront );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -174,7 +180,7 @@ function setup() {
 		size: createVector( width*0.13, width*0.09 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.3, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsFront );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -191,7 +197,7 @@ function setup() {
 		size: createVector( width*0.05, width*0.06 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.3, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsFront );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -206,7 +212,7 @@ function setup() {
 		size: createVector( width*0.08, width*0.05 ),
 		show: function(){
 			push();
-			translate( this.position.x, this.position.y );
+			translate( this.position.x+=0.3, this.position.y );
 			noStroke();
 			fill( myColor.winterMountainsFront );
 			triangle( this.size.x/2 , 0, this.size.x, this.size.y, 0, this.size.y);
@@ -295,6 +301,9 @@ function draw() {
 		translate( 0, - width*0.15 );
 	}
 	treeFront.show();
+
+
+
 	pop();
 }
 
