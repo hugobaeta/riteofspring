@@ -10,7 +10,6 @@
 //Variables
 var myColor;
 
-
 // Setup
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -28,6 +27,11 @@ function setup() {
 		winterTreeGrassFront: color(187,220,223)
 	}
 
+
+
+	// ====================================================
+	// ILLUSTRATION
+	// ====================================================
 
 	// Mountains
 	// Back
@@ -81,10 +85,14 @@ function setup() {
 
 	// GROUP
 	mountainsBack = {
+		position: createVector(width,0), // Controls start position of the Group for Tween
 		show: function(){
-			mountainBack1.show();
-			mountainBack2.show();
-			mountainBack3.show();
+			push();
+			translate( this.position.x, this.position.y );
+				mountainBack1.show();
+				mountainBack2.show();
+				mountainBack3.show();
+			pop();
 		}
 	}; //end mountainsBack
 
@@ -141,10 +149,14 @@ function setup() {
 
 	// GROUP
 	mountainsMiddle = {
+		position: createVector(width*1.05,0), // Controls start position of the Group for Tween
 		show: function(){
+			push();
+			translate( this.position.x, this.position.y );
 			mountainMiddle1.show();
 			mountainMiddle2.show();
 			mountainMiddle3.show();
+			pop();
 		}
 	}; //end mountainsMiddle
 
@@ -220,11 +232,15 @@ function setup() {
 
 	// GROUP
 	mountainsFront = {
+		position: createVector(width*1.1,0), // Controls start position of the Group for Tween
 		show: function(){
+			push();
+			translate( this.position.x, this.position.y );
 			mountainFront1.show();
 			mountainFront2.show();
 			mountainFront3.show();
 			mountainFront4.show();
+			pop();
 		}
 	}; //end mountainsFront
 
@@ -232,42 +248,68 @@ function setup() {
 
 	// Tree
 	// Front
-
 	treeFront = {
+		position: createVector(width*2,0), // Controls start position of the Group for Tween
 		show: function(){
 			noStroke();
-			fill( myColor.winterTreeBranches );
-			beginShape();
-				vertex(width*0.1073, width*0.4313);
-				vertex(width*0.1073, width*0.2672);
-				vertex(width*0.0, width*0.1594);
-				vertex(width*0.0146, width*0.1448);
-				vertex(width*0.1073, width*0.2375);
-				vertex(width*0.1073, width*0.0979);
-				vertex(width*0.0625, width*0.0536);
-				vertex(width*0.0776, width*0.0385);
-				vertex(width*0.1073, width*0.0688);
-				vertex(width*0.1073, width*0.0);
-				vertex(width*0.1281, width*0.0);
-				vertex(width*0.1281, width*0.1516);
-				vertex(width*0.1938, width*0.0859);
-				vertex(width*0.2083, width*0.1005);
-				vertex(width*0.1281, width*0.1807);
-				vertex(width*0.1281, width*0.2385);
-				vertex(width*0.2219, width*0.1448);
-				vertex(width*0.2365, width*0.1594);
-				vertex(width*0.1281, width*0.2677);
-				vertex(width*0.1281, width*0.4313);
-			endShape(CLOSE);
-
-			// These aren't working for some reason... I might just be tired...
-			// fill( myColor.winterTreeGrassBack );
-			// ellipse(width*0.0797, width*0.3984, width*0.04, width*0.4);
-			// ellipse(width*0.1104, width*0.3870, width*0.05, width*0.5);
-			// fill( myColor.winterTreeGrassFront );
-			// ellipse(width*0.1061, width*0.1039, width*0.04, width*0.4);
+			push();
+			translate( this.position.x, this.position.y );
+				beginShape();
+					vertex(width*0.1073, width*0.4313);
+					vertex(width*0.1073, width*0.2672);
+					vertex(width*0.0, width*0.1594);
+					vertex(width*0.0146, width*0.1448);
+					vertex(width*0.1073, width*0.2375);
+					vertex(width*0.1073, width*0.0979);
+					vertex(width*0.0625, width*0.0536);
+					vertex(width*0.0776, width*0.0385);
+					vertex(width*0.1073, width*0.0688);
+					vertex(width*0.1073, width*0.0);
+					vertex(width*0.1281, width*0.0);
+					vertex(width*0.1281, width*0.1516);
+					vertex(width*0.1938, width*0.0859);
+					vertex(width*0.2083, width*0.1005);
+					vertex(width*0.1281, width*0.1807);
+					vertex(width*0.1281, width*0.2385);
+					vertex(width*0.2219, width*0.1448);
+					vertex(width*0.2365, width*0.1594);
+					vertex(width*0.1281, width*0.2677);
+					vertex(width*0.1281, width*0.4313);
+				endShape(CLOSE);
+			pop();
 		}
 	}; //end treeFront
+
+
+	// ====================================================
+	// ANIMATION
+	// ====================================================
+	var tweenSpeed = 10000;
+
+	// Mountains Back
+	var tweenMountainsBack = new TWEEN.Tween( mountainsBack.position );
+			tweenMountainsBack.to({ x: 0 }, tweenSpeed);
+			tweenMountainsBack.easing( TWEEN.Easing.Quadratic.Out );
+			tweenMountainsBack.start();
+
+	// Mountains Middle
+	var tweenMountainsMiddle = new TWEEN.Tween( mountainsMiddle.position );
+			tweenMountainsMiddle.to({ x: 0 }, tweenSpeed);
+			tweenMountainsMiddle.easing( TWEEN.Easing.Quadratic.Out );
+			tweenMountainsMiddle.start();
+
+	// Mountains Front
+	var tweenMountainsFront = new TWEEN.Tween( mountainsFront.position );
+			tweenMountainsFront.to({ x: 0 }, tweenSpeed);
+			tweenMountainsFront.easing( TWEEN.Easing.Quadratic.Out );
+			tweenMountainsFront.start();
+
+	// Tree
+	var tweenTreeFront = new TWEEN.Tween( treeFront.position );
+			tweenTreeFront.to({ x: 0 }, tweenSpeed);
+			tweenTreeFront.easing( TWEEN.Easing.Quadratic.Out );
+			tweenTreeFront.start();
+
 
 
 } // end Setup
@@ -289,13 +331,29 @@ function draw() {
 
 	//Trees
 	push();
-	translate( width*0.45, height - width*0.4313 );
-	if( height > width) {
-		scale(1.8);
-		translate( 0, - width*0.15 );
-	}
-	treeFront.show();
+		// Main Tree
+		translate( width*0.45, height - width*0.4313 );
+		if( height > width) {
+			scale(1.8);
+			translate( 0, - width*0.15 );
+		}
+		fill( myColor.winterTreeBranches );
+		treeFront.show();
 	pop();
+
+	// push();
+	// 	// Secondary Tree
+	// 	translate( width*0.20, height - width*0.3 );
+	// 	scale(0.3);
+	// 	// if( height > width) {
+	// 	// 	scale(1.8);
+	// 	// 	translate( 0, - width*0.15 );
+	// 	// }
+	// 	fill( myColor.winterTreeBranches, 180 );
+	// 	treeFront.show();
+	// pop();
+
+	TWEEN.update();
 }
 
 
