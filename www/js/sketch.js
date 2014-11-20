@@ -33,6 +33,19 @@ function setup() {
 	// ILLUSTRATION
 	// ====================================================
 
+
+	// Horizon Ground
+
+	horizonGround = {
+		color: color(230,235,235),
+		show: function(){
+			fill(this.color);
+			rect(0, width*0.22, width, height);
+		}
+	}; //end horizonGround
+
+
+
 	// Mountains
 	// Back
 
@@ -85,7 +98,7 @@ function setup() {
 
 	// GROUP
 	mountainsBack = {
-		position: createVector(width,0), // Controls start position of the Group for Tween
+		position: createVector(width,0), // Controls tween start position
 		show: function(){
 			push();
 			translate( this.position.x, this.position.y );
@@ -149,7 +162,7 @@ function setup() {
 
 	// GROUP
 	mountainsMiddle = {
-		position: createVector(width*1.05,0), // Controls start position of the Group for Tween
+		position: createVector(width*1.15,0), // Controls tween start position
 		show: function(){
 			push();
 			translate( this.position.x, this.position.y );
@@ -232,7 +245,7 @@ function setup() {
 
 	// GROUP
 	mountainsFront = {
-		position: createVector(width*1.1,0), // Controls start position of the Group for Tween
+		position: createVector(width*1.3,0), // Controls tween start position
 		show: function(){
 			push();
 			translate( this.position.x, this.position.y );
@@ -247,35 +260,92 @@ function setup() {
 
 
 	// Tree
-	// Front
+
+	// Tree Branches
+	treeBranches = {
+		color: color(170,175,165),
+		show: function(){
+			noStroke();
+			fill( this.color );
+			beginShape();
+				vertex(width*0.1073, width*0.4313);
+				vertex(width*0.1073, width*0.2672);
+				vertex(width*0.0, width*0.1594);
+				vertex(width*0.0146, width*0.1448);
+				vertex(width*0.1073, width*0.2375);
+				vertex(width*0.1073, width*0.0979);
+				vertex(width*0.0625, width*0.0536);
+				vertex(width*0.0776, width*0.0385);
+				vertex(width*0.1073, width*0.0688);
+				vertex(width*0.1073, width*0.0);
+				vertex(width*0.1281, width*0.0);
+				vertex(width*0.1281, width*0.1516);
+				vertex(width*0.1938, width*0.0859);
+				vertex(width*0.2083, width*0.1005);
+				vertex(width*0.1281, width*0.1807);
+				vertex(width*0.1281, width*0.2385);
+				vertex(width*0.2219, width*0.1448);
+				vertex(width*0.2365, width*0.1594);
+				vertex(width*0.1281, width*0.2677);
+				vertex(width*0.1281, width*0.4313);
+			endShape(CLOSE);
+		}
+	}; //end treeBranches
+
+	// Tree Leaves
+	treeLeaves1 = {
+		size: createVector(0,0),
+		color: color(190,210,175,180),
+		show: function(){
+			noStroke();
+			fill( this.color );
+			ellipse(width*0.0422, width*0.1932, this.size.x, this.size.y);
+			ellipse(width*0.0718, width*0.0318, this.size.x, this.size.y);
+			ellipse(width*0.1339, width*0.0005, this.size.x, this.size.y);
+			ellipse(width*0.2208, width*0.0964, this.size.x, this.size.y);
+			ellipse(width*0.2068, width*0.2000, this.size.x, this.size.y);
+		}
+	}; //end treeLeaves1
+
+	treeLeaves2 = {
+		size: createVector(0,0),
+		color: color(180,195,90,150),
+		show: function(){
+			noStroke();
+			fill( this.color );
+			ellipse(width*0.0781, width*0.2328, this.size.x, this.size.y);
+			ellipse(width*0.1208, width*0.2141, this.size.x, this.size.y);
+			ellipse(width*0.1354, width*0.1031, this.size.x, this.size.y);
+			ellipse(width*0.1615, width*0.1724, this.size.x, this.size.y);
+			ellipse(width*0.1990, width*0.2297, this.size.x, this.size.y);
+		}
+	}; //end treeLeaves2
+
+	treeLeaves3 = {
+		size: createVector(0,0),
+		color: color(180,195,90,150),
+		show: function(){
+			noStroke();
+			fill( this.color );
+			ellipse(width*0.0682, width*0.1802, this.size.x, this.size.y);
+			ellipse(width*0.0714, width*0.0495, this.size.x, this.size.y);
+			ellipse(width*0.1349, width*0.0281, this.size.x, this.size.y);
+			ellipse(width*0.2000, width*0.0964, this.size.x, this.size.y);
+			ellipse(width*0.2099, width*0.1724, this.size.x, this.size.y);
+		}
+	}; //end treeLeaves3
+
+	// TREE GROUP
 	treeFront = {
-		position: createVector(width*2,0), // Controls start position of the Group for Tween
+		position: createVector(width*2.5,0), // Controls tween start position
 		show: function(){
 			noStroke();
 			push();
 			translate( this.position.x, this.position.y );
-				beginShape();
-					vertex(width*0.1073, width*0.4313);
-					vertex(width*0.1073, width*0.2672);
-					vertex(width*0.0, width*0.1594);
-					vertex(width*0.0146, width*0.1448);
-					vertex(width*0.1073, width*0.2375);
-					vertex(width*0.1073, width*0.0979);
-					vertex(width*0.0625, width*0.0536);
-					vertex(width*0.0776, width*0.0385);
-					vertex(width*0.1073, width*0.0688);
-					vertex(width*0.1073, width*0.0);
-					vertex(width*0.1281, width*0.0);
-					vertex(width*0.1281, width*0.1516);
-					vertex(width*0.1938, width*0.0859);
-					vertex(width*0.2083, width*0.1005);
-					vertex(width*0.1281, width*0.1807);
-					vertex(width*0.1281, width*0.2385);
-					vertex(width*0.2219, width*0.1448);
-					vertex(width*0.2365, width*0.1594);
-					vertex(width*0.1281, width*0.2677);
-					vertex(width*0.1281, width*0.4313);
-				endShape(CLOSE);
+				treeBranches.show();
+				treeLeaves1.show();
+				treeLeaves2.show();
+				treeLeaves3.show();
 			pop();
 		}
 	}; //end treeFront
@@ -284,31 +354,72 @@ function setup() {
 	// ====================================================
 	// ANIMATION
 	// ====================================================
-	var tweenSpeed = 10000;
+	var tweenPanSpeed = 10000;
+	var tweenLeavesSpeed = 1500;
 
 	// Mountains Back
-	var tweenMountainsBack = new TWEEN.Tween( mountainsBack.position );
-			tweenMountainsBack.to({ x: 0 }, tweenSpeed);
-			tweenMountainsBack.easing( TWEEN.Easing.Quadratic.Out );
-			tweenMountainsBack.start();
+	var tweenMountainsBack = new TWEEN.Tween( mountainsBack.position )
+			.to( { x: 0 }, tweenPanSpeed )
+			.easing( TWEEN.Easing.Quadratic.Out )
+			.start();
 
 	// Mountains Middle
-	var tweenMountainsMiddle = new TWEEN.Tween( mountainsMiddle.position );
-			tweenMountainsMiddle.to({ x: 0 }, tweenSpeed);
-			tweenMountainsMiddle.easing( TWEEN.Easing.Quadratic.Out );
-			tweenMountainsMiddle.start();
+	var tweenMountainsMiddle = new TWEEN.Tween( mountainsMiddle.position )
+			.to( { x: 0 }, tweenPanSpeed )
+			.easing( TWEEN.Easing.Quadratic.Out )
+			.start();
 
 	// Mountains Front
-	var tweenMountainsFront = new TWEEN.Tween( mountainsFront.position );
-			tweenMountainsFront.to({ x: 0 }, tweenSpeed);
-			tweenMountainsFront.easing( TWEEN.Easing.Quadratic.Out );
-			tweenMountainsFront.start();
+	var tweenMountainsFront = new TWEEN.Tween( mountainsFront.position )
+			.to( { x: 0 }, tweenPanSpeed )
+			.easing( TWEEN.Easing.Quadratic.Out )
+			.start();
 
 	// Tree
-	var tweenTreeFront = new TWEEN.Tween( treeFront.position );
-			tweenTreeFront.to({ x: 0 }, tweenSpeed);
-			tweenTreeFront.easing( TWEEN.Easing.Quadratic.Out );
-			tweenTreeFront.start();
+	var tweenTreeMove = new TWEEN.Tween( treeFront.position )
+			.to( { x: 0 }, tweenPanSpeed )
+			.easing( TWEEN.Easing.Quadratic.Out )
+			.start()
+			.onComplete(function(){
+				tweenLeaves1.start();
+			});
+
+	// Tree Leaves
+	var tweenLeaves1 = new TWEEN.Tween( treeLeaves1.size )
+			.to( { x: width*0.3, y:width*0.3 }, tweenLeavesSpeed )
+			.easing( TWEEN.Easing.Quintic.Out )
+			.onComplete(function(){
+				tweenLeaves2.start();
+				treeLeaves1.color = color(180,195,90,200);
+				treeBranches.color = color(153,150,130);
+
+				//horizonGround.color = color(241,242,230);
+			});
+
+	var tweenLeaves2 = new TWEEN.Tween( treeLeaves2.size )
+			.to( { x: width*0.15, y:width*0.15 }, tweenLeavesSpeed )
+			.easing( TWEEN.Easing.Quintic.Out )
+			.onComplete(function(){
+				tweenLeaves3.start();
+				treeLeaves1.color = color(150,180,80,200);
+				treeBranches.color = color(135,125,90);
+
+				//horizonGround.color = color(205,215,160);
+			});
+
+	var tweenLeaves3 = new TWEEN.Tween( treeLeaves3.size )
+			.to( { x: width*0.13, y:width*0.12 }, tweenLeavesSpeed )
+			.easing( TWEEN.Easing.Quintic.Out )
+			.onComplete(function(){
+				treeLeaves2.color = color(150,180,80,200);
+				treeBranches.color = color(115,100,55);
+			});
+
+
+
+	// ====================================================
+	// INTERACTION
+	// ====================================================
 
 
 
@@ -321,8 +432,7 @@ function draw() {
 	noStroke();
 
 	// Ground / Horizon Line
-	fill(230,235,235);
-	rect(0, width*0.22, width, height);
+	horizonGround.show();
 
 	// Mountains
 	mountainsBack.show();
@@ -337,7 +447,6 @@ function draw() {
 			scale(1.8);
 			translate( 0, - width*0.15 );
 		}
-		fill( myColor.winterTreeBranches );
 		treeFront.show();
 	pop();
 
@@ -355,7 +464,6 @@ function draw() {
 
 	TWEEN.update();
 }
-
 
 
 // Canvas Resize method from p5.js documentation
