@@ -1,6 +1,6 @@
 body {
   padding: 0; margin: 0; overflow: hidden;
-  background: white; /* rgb(180, 235, 240); */
+  background: white;
   color: rgba(50,70,120,.5);
   font-family: 'Arimo', sans-serif;
 }
@@ -42,10 +42,11 @@ figure {
 
 #credits {
   display: none;
-
+  background: rgb(180, 235, 240);
   width: 100%;
-  height: auto;
-  margin: 10% auto 50%;
+  height: 100%;
+  margin: 0;
+  padding: 20% 0;
   text-align: center;
 }
 
